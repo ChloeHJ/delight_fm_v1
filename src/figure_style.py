@@ -1,4 +1,4 @@
-"""Shared visual conventions from the original v11 report figures."""
+"""Shared visual conventions for DELIGHT-FM publication figures."""
 import textwrap
 import matplotlib
 matplotlib.use('Agg')
@@ -19,7 +19,7 @@ def apply():
 
 
 def rank_figure(frame,label,value,title,limit=20):
-    """Compact signed-effect bars, matching the original v11 web-index ranking."""
+    """Compact signed-effect bars for ranked perturbation reports."""
     plotted=frame.reindex(frame[value].abs().sort_values(ascending=False).head(limit).index)
     fig,ax=plt.subplots(figsize=(5,max(5,len(plotted)*.3)),layout='constrained')
     ax.barh(plotted[label],plotted[value],color=np.where(plotted[value]>0,POSITIVE,NEGATIVE))

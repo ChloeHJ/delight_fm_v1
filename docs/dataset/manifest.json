@@ -27,8 +27,8 @@
       "group": "stromal"
     },
     "exported/delight_fm/export_provenance.rds": {
-      "bytes": 44525,
-      "sha256": "f75c612de4b9b96b5447bb9114c0c27994f4f0c7158b95a78bf2954f1a7550f3",
+      "bytes": 44603,
+      "sha256": "44ad92d1a6997f553fc0bfd6027af0db9766452781e452a7d468f28d688eba62",
       "group": "delight_fm"
     },
     "exported/delight_fm/log_normalized_gene_by_cell.mtx": {
@@ -52,8 +52,8 @@
       "group": "delight_fm"
     },
     "exported/epithelium_colon/export_provenance.rds": {
-      "bytes": 44578,
-      "sha256": "a56b7e2fa4f5f9e027f22697d011f31ce928df7995c5bf954cfcc0a993ab1b49",
+      "bytes": 44627,
+      "sha256": "f66a034fe497e09e23876646cd7dedff21c4045de0a1b7569306bbaf0d5fd87b",
       "group": "epithelium_colon"
     },
     "exported/epithelium_colon/log_normalized_gene_by_cell.mtx": {
@@ -77,8 +77,8 @@
       "group": "epithelium_colon"
     },
     "exported/epithelium_ileum/export_provenance.rds": {
-      "bytes": 44573,
-      "sha256": "9c4326d153cf82e89c71f90053168c83cb880f2e1aaac5ea1cb01d54ce661f05",
+      "bytes": 44627,
+      "sha256": "bc4053de2ff2e0670198d0ec3faa78b1a0a9489fc758af28dc0865372ba18523",
       "group": "epithelium_ileum"
     },
     "exported/epithelium_ileum/log_normalized_gene_by_cell.mtx": {
@@ -102,8 +102,8 @@
       "group": "epithelium_ileum"
     },
     "exported/immune/export_provenance.rds": {
-      "bytes": 44527,
-      "sha256": "3fadb0a5f8ab035b8ff2a8b23166f06e1ee26de5807da8a55cde9545567b08f6",
+      "bytes": 44588,
+      "sha256": "9d8956cec59f487a97afbe0e7e142305b61f338e82c4233a2ae4161edf01516d",
       "group": "immune"
     },
     "exported/immune/log_normalized_gene_by_cell.mtx": {
@@ -127,8 +127,8 @@
       "group": "immune"
     },
     "exported/stromal/export_provenance.rds": {
-      "bytes": 44528,
-      "sha256": "75415cf8f3b61e986aed3f05406711be5fd2921cc90499df2311a2c768a79114",
+      "bytes": 44586,
+      "sha256": "dec12c246b8ae43a41c8973c59a4a66787d88bbbc502c7dd74181c109076c117",
       "group": "stromal"
     },
     "exported/stromal/log_normalized_gene_by_cell.mtx": {
@@ -157,8 +157,8 @@
       "group": "delight_fm"
     },
     "tokenized/delight_fm/label_maps.json": {
-      "bytes": 5715,
-      "sha256": "341aee1340924522926911a4577e7bd9cff8b27fcaa57a7790e9911d15d5bdf4",
+      "bytes": 5609,
+      "sha256": "530c6be1d7a984eac0d5636b06c0fc10e343c97a89655a2d1613273d8d6ec277",
       "group": "delight_fm"
     },
     "tokenized/delight_fm/test.dataset/data-00000-of-00008.arrow": {
@@ -372,8 +372,8 @@
       "group": "epithelium_colon"
     },
     "tokenized/epithelium_colon/label_maps.json": {
-      "bytes": 2757,
-      "sha256": "fff46e8ea2a11558ade99c1422036080d91626ec86614bba3cc8ab0345dd004f",
+      "bytes": 2622,
+      "sha256": "468936d855f72500823cd5f98e9c1e42f382b6077196a2422bb63a67ed6d9f3f",
       "group": "epithelium_colon"
     },
     "tokenized/epithelium_colon/test.dataset/data-00000-of-00002.arrow": {
@@ -442,8 +442,8 @@
       "group": "epithelium_ileum"
     },
     "tokenized/epithelium_ileum/label_maps.json": {
-      "bytes": 2287,
-      "sha256": "3cf3438a6d123cabb80990e2d25fc788e7099777a10ed11f9d9b870058c7a69c",
+      "bytes": 2153,
+      "sha256": "baa292613e3d988f9d847b02807f62e2e64d3e4d8589247b2b82dfee47b602a7",
       "group": "epithelium_ileum"
     },
     "tokenized/epithelium_ileum/test.dataset/data-00000-of-00001.arrow": {
@@ -502,8 +502,8 @@
       "group": "immune"
     },
     "tokenized/immune/label_maps.json": {
-      "bytes": 3220,
-      "sha256": "7201ce49ecab9749c66ab6e616a5026d9ab6858328984ad6ca0ea6e8a29ca1c9",
+      "bytes": 3114,
+      "sha256": "6fb70e8e7f5bf4f25fbc8de0c9cdbdf8736ed8d92258915ad8fd90de58c423b2",
       "group": "immune"
     },
     "tokenized/immune/test.dataset/data-00000-of-00002.arrow": {
@@ -582,8 +582,8 @@
       "group": "stromal"
     },
     "tokenized/stromal/label_maps.json": {
-      "bytes": 3499,
-      "sha256": "606100a50f5a232d0f87faaf6530c247541888dcc0275585df1fcb8dd6d35358",
+      "bytes": 3393,
+      "sha256": "bacf47efadb0fa68d2aa7b9132da56998b3eb86821d6533c2705a801d9904752",
       "group": "stromal"
     },
     "tokenized/stromal/test.dataset/data-00000-of-00004.arrow": {

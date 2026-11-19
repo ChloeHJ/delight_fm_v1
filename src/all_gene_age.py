@@ -133,7 +133,7 @@ def prepare(output, args):
 
 def load_config(output, verify=True):
     config=json.loads((output/'prepared.json').read_text())
-    if config['run_dir']!=str(RUN):raise ValueError('Prepared run directory differs from V11_RUN_DIR')
+    if config['run_dir']!=str(RUN):raise ValueError('Prepared run directory differs from the configured run directory')
     if verify:
         for path,checksum in config['input_checksums'].items():
             if file_hash(path)!=checksum:

@@ -1,10 +1,11 @@
 # DELIGHT-FM v1 source
 
-See [run instructions](../runs/README.md). Input datasets are local and versioned by SHA-256 manifest.
+See [run instructions](../runs/README.md). Input datasets are available from [Hugging Face](https://huggingface.co/datasets/chloehlee/delight_fm_v1-data) and versioned by SHA-256 manifest. Published checkpoint capabilities and notebook links are listed in the [model task guide](../docs/MODEL_TASKS.md).
 
 | Module | Responsibility |
 |---|---|
 | `pipeline.py`, `common.py`, `paths.py` | CLI, immutable run plan, input/source hashes, Slurm dependencies |
+| `notebook_workflows.py` | Portable target resolution, no-op controls and donor/classifier summaries included in published notebook packages |
 | `prepare_inputs.py`, `prepare_inputs.R`, `build_atlas_hf_dataset.py` | Validate local inputs; optional RNA rebuild using fixed donors |
 | `training.py`, `train_atlas_mamba.py`, `geneformer_mamba_model.py` | Full configuration and half-epoch sweeps; pretrained classifier backbone |
 | `compare_mamba_on_downstream.py`, `token_padding.py` | Downstream fine-tuning/evaluation; local padding adapter with unchanged Hugging Face MLM masking |
@@ -32,7 +33,7 @@ Construct the signed regulon-by-donor matrix of mean prediction changes. Define 
 
 `requirements-model.txt` records the pinned Python 3.10/CUDA 11.8 modelling stack; compiled Mamba extensions must match PyTorch. `requirements-report.txt` describes the separate plotting environment. `run.sh` clears inherited PYTHONPATH for the model environment and loads the module plotting environment for reports. No editable external Geneformer installation is needed: the local input-only adapter follows Geneformer's [right padding and special-token handling](https://huggingface.co/ctheodoris/Geneformer/blob/main/geneformer/pretrainer.py), while `DataCollatorForLanguageModeling` still implements masking.
 
-From the workspace root:
+From the Git repository root, with `PYTHON_BIN` set to the modeling environment:
 
 ```bash
 module load cuda/11.8

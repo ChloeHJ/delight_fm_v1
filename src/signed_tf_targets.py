@@ -1,4 +1,4 @@
-"""Signed TF-response edits in the v11 tokenization scale (CPU only)."""
+"""Signed TF-response edits in the DELIGHT-FM tokenization scale (CPU only)."""
 import csv
 import json
 import math

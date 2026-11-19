@@ -1,6 +1,6 @@
 # Run DELIGHT-FM v1
 
-Run these commands from the repository root. Install the pinned modeling environment and set `PYTHON_BIN` to its Python executable. Local data are already installed in this checkout; other users should follow [dataset instructions](../docs/dataset/README.md). Configuration and donor assignments are relative to this run directory.
+Run these commands from the repository root. Install the pinned modeling environment and set `PYTHON_BIN` to its Python executable. Install the [published input dataset](https://huggingface.co/datasets/chloehlee/delight_fm_v1-data) using the [dataset instructions](../docs/dataset/README.md). Configuration and donor assignments are relative to this run directory.
 
 ## Cohorts
 
@@ -16,7 +16,7 @@ These counts were checked against actual tokenized metadata, with no donor overl
 
 ## 1. Configure and freeze
 
-Review the hyperparameter grids, checkpoint epochs, marker/TF panels and Slurm resources before planning. Defaults are 6 merged configurations and 4 per lineage (22 training jobs), with 20 half-epoch evaluations from 0.5 to 10 epochs (440 downstream jobs). CollecTRI defaults to the previous 13-TF panel; set `perturbation.collectri_tfs` to `"all"` before planning to use the full bundled human table. Lineage regulons use the bundled SCENIC+ tables.
+Review the hyperparameter grids, checkpoint epochs, marker/TF panels and Slurm resources before planning. Defaults are 6 merged configurations and 4 per lineage (22 training jobs), with 20 half-epoch evaluations from 0.5 to 10 epochs (440 downstream jobs). CollecTRI defaults to a configured 13-TF panel; set `perturbation.collectri_tfs` to `"all"` before planning to use the full bundled human table. Lineage regulons use the bundled SCENIC+ tables.
 
 ```bash
 bash runs/run.sh plan
@@ -70,7 +70,7 @@ bash runs/run.sh cluster
 bash runs/run.sh cluster --group epithelium_ileum
 ```
 
-The reports and clustering run on completed v12 outputs, not historical v11 results. Reports can be regenerated while outputs accumulate; absent analyses are omitted. Clustering requires complete regulon-by-donor values.
+The reports and clustering use completed outputs from the configured run. Reports can be regenerated while outputs accumulate; absent analyses are omitted. Clustering requires complete regulon-by-donor values.
 
 | Output | Location under this run |
 |---|---|
@@ -90,6 +90,10 @@ Individual summaries embed PNG images; PDF/PNG figures and CSV data are stored b
 
 ## Validation and scope
 
-CPU tests cover, including signed float32 no-ops/ties, mask alignment, baseline mismatch rejection, clustering scale and command compatibility. Model engines import in the pinned environment. Training/classifier/age/BHLHE40 reports rendered from completed historical results in an isolated diagnostic fixture; the new k=12 renderer reproduces the published ileum feature matrix/common scale and clusters (ARI=1). These are code checks, not newly trained v12 results. GPU fitting and mandatory baseline/no-op prediction checks remain to run in the submitted workflow.
+CPU tests cover signed float32 no-ops/ties, mask alignment, baseline mismatch rejection, clustering scale and command compatibility. Model engines import in the pinned environment. Training/classifier/age/BHLHE40 reports rendered from completed historical results in an isolated diagnostic fixture; the new k=12 renderer reproduces the published ileum feature matrix/common scale and clusters (ARI=1). The full training commands create new checkpoints; published checkpoints and model-specific inference notebooks are available in the [Hugging Face model family](https://huggingface.co/chloehlee/). GPU fitting and mandatory baseline/no-op prediction checks remain to run in the submitted workflow.
 
 Useful next additions, kept outside this minimal first collection: expression-vs-deletion proportion/dotplot reports using the RNA RDS, fetal/adult/early-life composite programs and Seurat expression dotplots, and dedicated fetal-to-early-life regulon contrasts. The present age report retains an early-life mean absolute effect ranking. For publication-level independent generalization, reserve an additional untouched donor cohort beyond the donors used for checkpoint selection.
+
+## Published checkpoints and notebooks
+
+To use existing checkpoints directly, follow the [model task guide](../docs/MODEL_TASKS.md). The merged checkpoint supports saved-head cell-type and cluster prediction plus marker/CollecTRI cell-type perturbations. Lineage foundation notebooks cover saved classification heads and task fine-tuning; the matching `-age` packages exclusively provide log2(PCW) prediction and gene/SCENIC+ perturbations. The Slurm workflow above performs a fresh sweep and final fitting rather than downloading those fitted checkpoints into its registry.

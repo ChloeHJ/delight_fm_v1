@@ -29,13 +29,26 @@ def verify(run, records):
         print('Verified',name,flush=True)
     return verified
 
+
+def ensure_upload_repo(api, repo_id, public):
+    """Honor explicit public visibility for both new and existing datasets."""
+    api.create_repo(repo_id,repo_type='dataset',private=not public,exist_ok=True)
+    info=api.repo_info(repo_id=repo_id,repo_type='dataset')
+    if public and info.private:
+        api.update_repo_settings(repo_id=repo_id,repo_type='dataset',private=False)
+        info=api.repo_info(repo_id=repo_id,repo_type='dataset')
+    if public and info.private:
+        raise ValueError('Dataset remains private; change repository visibility before uploading')
+    print('Dataset visibility:', 'private' if info.private else 'public',flush=True)
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('action',choices=['preview','verify','download','upload'])
     p.add_argument('--run-dir',type=Path,default=(ROOT.parent/'huggingface/dataset' if (ROOT.parent/'huggingface/dataset/data/input_manifest.json').exists() else ROOT/'runs'))
     p.add_argument('--repo-id',default='chloehlee/delight_fm_v1-data',help='Hugging Face dataset namespace/repository')
     p.add_argument('--revision',help='Pinned 40-character commit SHA for downloads')
-    p.add_argument('--public',action='store_true',help='Create a public dataset; default private')
+    p.add_argument('--public',action='store_true',help='Make this dataset public, including an existing repository; new repositories otherwise default private')
     args=p.parse_args();run=args.run_dir.resolve()
     records=json.loads(MANIFEST.read_text())['files']
     if args.action=='preview':
@@ -58,7 +71,7 @@ def main():
         tmp.replace(target)
     if args.action=='upload':
         from huggingface_hub import HfApi
-        api=HfApi();api.create_repo(args.repo_id,repo_type='dataset',private=not args.public,exist_ok=True)
+        api=HfApi();ensure_upload_repo(api,args.repo_id,args.public)
         api.upload_folder(repo_id=args.repo_id,repo_type='dataset',folder_path=str(ROOT/'docs/dataset'),allow_patterns=['README.md','manifest.json'])
         result=api.upload_folder(repo_id=args.repo_id,repo_type='dataset',folder_path=str(run),allow_patterns=list(records),commit_message='Upload checksum-verified DELIGHT-FM v1 inputs')
         print('Dataset revision:',result.oid)
