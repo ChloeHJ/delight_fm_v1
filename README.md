@@ -1,6 +1,6 @@
-# delight_fm_v1
+# DELIGHT-FM v1.0: Foundation model for intestinal maturation
 
-Final DELIGHT-FM training, downstream evaluation and in silico perturbation workflows.
+DELIGHT-FM training, downstream evaluation and in silico perturbation workflows.
 
 Code: [ChloeHJ/delight_fm_v1](https://github.com/ChloeHJ/delight_fm_v1). Models: [chloehlee on Hugging Face](https://huggingface.co/chloehlee/). Published input dataset: [chloehlee/delight_fm_v1-data](https://huggingface.co/datasets/chloehlee/delight_fm_v1-data).
 
@@ -46,16 +46,10 @@ Five foundation models: [merged](https://huggingface.co/chloehlee/delight-fm), [
 
 Saved age models: [ileum age](https://huggingface.co/chloehlee/delight-fm-epi-ileum-age), [colon age](https://huggingface.co/chloehlee/delight-fm-epi-colon-age), [immune age](https://huggingface.co/chloehlee/delight-fm-immune-age), and [stromal age](https://huggingface.co/chloehlee/delight-fm-stromal-age). Each model repository includes its usage notebooks.
 
-## Publication
-
-Upload only this directory's Git-tracked contents to GitHub. `.gitignore` excludes inputs, weights, generated outputs and local credentials. The separate Hugging Face folder provides model upload instructions. The dataset helper can also upload a prepared run explicitly:
-
-```bash
-python tools/dataset.py upload --run-dir /path/to/prepared/run
-```
-
-New dataset repositories default to private. No upload occurs during preparation or verification. Complete dataset citation/redistribution terms and select the code-repository license before public release. Existing model packages retain their license and attribution files.
-
 See [model task support and notebook guide](docs/MODEL_TASKS.md) for saved-head inference, task-specific fine-tuning, lineage age prediction, SCENIC+ age perturbations and merged CollecTRI cell-type perturbations.
 
-For dataset uploads, `python tools/dataset.py upload --public` explicitly makes an existing dataset public before uploading. Without `--public`, existing visibility is preserved and new datasets default to private. The helper prints the actual dataset visibility before committing files.
+## Citation
+
+Postnatal Reprogramming Shapes Human Intestinal Epithelial Immune Competency
+Chloe Hyun-Jung Lee, David Fawkner-Corbett, Zoe Christoforidou, Ana Sousa Gerós, Verena Lentsch, Lucy Sheikh, Esther Bridges, Marta Jagielowicz, Lei Deng, Xiao Qin, Huei-Wen Chuang, Vy Wien Lai, Sophie Craddock, Aurore Mazurier, Paulina Siejka-Zielinska, Paula Gomez Castro, Anna Aulicino, Colleen McGregor, Tarun Gupta, Nicole Cianci, Rhea Kujawa, Paola Vargas Gutierrez, Carol Cheng, Maria Greco, Darren Fowler, Simon James Alexander Buczacki, Grace Rimmer, Rachel Harwood, Nigel Hall, Paul Johnson, Hashem Koohy, Alison Simmons, Agne Antanaviciute
+bioRxiv 2026.05.05.722861; doi: https://doi.org/10.64898/2026.05.05.722861
