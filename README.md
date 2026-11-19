@@ -1,4 +1,4 @@
-# DELIGHT-FM v1.0: Foundation model for intestinal maturation
+# DELIGHT-FM v1.0: a foundation model for intestinal maturation
 
 DELIGHT-FM training, downstream evaluation and in silico perturbation workflows.
 
@@ -51,5 +51,7 @@ See [model task support and notebook guide](docs/MODEL_TASKS.md) for saved-head 
 ## Citation
 
 Postnatal Reprogramming Shapes Human Intestinal Epithelial Immune Competency
+
 Chloe Hyun-Jung Lee, David Fawkner-Corbett, Zoe Christoforidou, Ana Sousa Gerós, Verena Lentsch, Lucy Sheikh, Esther Bridges, Marta Jagielowicz, Lei Deng, Xiao Qin, Huei-Wen Chuang, Vy Wien Lai, Sophie Craddock, Aurore Mazurier, Paulina Siejka-Zielinska, Paula Gomez Castro, Anna Aulicino, Colleen McGregor, Tarun Gupta, Nicole Cianci, Rhea Kujawa, Paola Vargas Gutierrez, Carol Cheng, Maria Greco, Darren Fowler, Simon James Alexander Buczacki, Grace Rimmer, Rachel Harwood, Nigel Hall, Paul Johnson, Hashem Koohy, Alison Simmons, Agne Antanaviciute
+
 bioRxiv 2026.05.05.722861; doi: https://doi.org/10.64898/2026.05.05.722861
