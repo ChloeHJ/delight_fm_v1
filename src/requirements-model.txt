@@ -1,0 +1,14 @@
+# Python 3.10; torch CUDA 11.8 build and compiled Mamba extensions must match.
+# These are the installed versions used by the final modelling environment.
+torch==2.2.2+cu118
+transformers==4.36.2
+datasets==4.8.5
+accelerate==0.28.0
+mamba-ssm==2.2.2
+causal-conv1d==1.4.0
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.13.1
+scikit-learn==1.4.2
+anndata==0.10.9
+pyarrow==25.0.0

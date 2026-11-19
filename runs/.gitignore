@@ -1,0 +1,12 @@
+# Keep config/, donors/, required data snapshots and the small launch scripts.
+tokenized/
+exported/
+data/rna/
+.input_localization/
+pretrain_outputs/
+outputs/
+logs/
+diagnostics/
+.hf/
+conditions.tsv
+__pycache__/

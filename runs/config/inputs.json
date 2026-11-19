@@ -1,0 +1,54 @@
+{
+  "models": {
+    "delight_fm": {
+      "data_root": ".",
+      "rds": "data/rna/merged_atlas.RDS",
+      "excluded_age_groups": [],
+      "minimum_training_cells_per_age": 0,
+      "expected_cells": 671358,
+      "expected_train_cells": 531101,
+      "expected_test_cells": 140257
+    },
+    "immune": {
+      "data_root": ".",
+      "rds": "data/rna/immune_clustered.RDS",
+      "excluded_age_groups": [],
+      "minimum_training_cells_per_age": 0,
+      "expected_cells": 211617,
+      "expected_train_cells": 175031,
+      "expected_test_cells": 36586
+    },
+    "epithelium_colon": {
+      "data_root": ".",
+      "rds": "data/rna/epithelium_colon_clustered.RDS",
+      "excluded_age_groups": [],
+      "minimum_training_cells_per_age": 50,
+      "expected_cells": 110190,
+      "expected_train_cells": 85035,
+      "expected_test_cells": 25155
+    },
+    "epithelium_ileum": {
+      "data_root": ".",
+      "rds": "data/rna/epithelium_ileum_clustered.RDS",
+      "excluded_age_groups": [
+        "Adult, 80+"
+      ],
+      "minimum_training_cells_per_age": 50,
+      "expected_cells": 82413,
+      "expected_train_cells": 67849,
+      "expected_test_cells": 14564
+    },
+    "stromal": {
+      "data_root": ".",
+      "rds": "data/rna/stroma_clustered.RDS",
+      "excluded_age_groups": [],
+      "minimum_training_cells_per_age": 0,
+      "expected_cells": 267137,
+      "expected_train_cells": 206814,
+      "expected_test_cells": 60323
+    }
+  },
+  "schema_version": 2,
+  "path_base": "run",
+  "require_local_copies": true
+}

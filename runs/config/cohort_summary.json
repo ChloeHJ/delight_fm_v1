@@ -1,0 +1,32 @@
+[
+  {
+    "group": "delight_fm",
+    "cells": 671358,
+    "train_donors": 128,
+    "test_donors": 21
+  },
+  {
+    "group": "immune",
+    "cells": 211617,
+    "train_donors": 126,
+    "test_donors": 21
+  },
+  {
+    "group": "epithelium_colon",
+    "cells": 110190,
+    "train_donors": 79,
+    "test_donors": 13
+  },
+  {
+    "group": "epithelium_ileum",
+    "cells": 82413,
+    "train_donors": 71,
+    "test_donors": 13
+  },
+  {
+    "group": "stromal",
+    "cells": 267137,
+    "train_donors": 119,
+    "test_donors": 21
+  }
+]

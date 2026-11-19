@@ -1,0 +1,690 @@
+{
+  "schema_version": 1,
+  "files": {
+    "data/rna/epithelium_colon_clustered.RDS": {
+      "bytes": 1448237512,
+      "sha256": "1279a7cbbfb6c65671b904d0f5c6b6312437e80335a5d5de452a60faca96efbd",
+      "group": "epithelium_colon"
+    },
+    "data/rna/epithelium_ileum_clustered.RDS": {
+      "bytes": 1185242441,
+      "sha256": "5d04bc6e0bf8ef200e1439a6db637b1bcb472df4e2d5889b46743b8480cb6082",
+      "group": "epithelium_ileum"
+    },
+    "data/rna/immune_clustered.RDS": {
+      "bytes": 1755261032,
+      "sha256": "bb09e5dc9eaa0268a4248eed1be3fdd3e0b4e65968ba08390687b43442736c55",
+      "group": "immune"
+    },
+    "data/rna/merged_atlas.RDS": {
+      "bytes": 41860384979,
+      "sha256": "ef88e5b4e2611a08fb00cc527d74c4e8b53dc1a44e69f14b459a4e5d61a0e0cf",
+      "group": "delight_fm"
+    },
+    "data/rna/stroma_clustered.RDS": {
+      "bytes": 3445387953,
+      "sha256": "fe83a79018b54e275617d208a77d233d27f3136c6893f16ce7da7239c66e10cc",
+      "group": "stromal"
+    },
+    "exported/delight_fm/export_provenance.rds": {
+      "bytes": 44525,
+      "sha256": "f75c612de4b9b96b5447bb9114c0c27994f4f0c7158b95a78bf2954f1a7550f3",
+      "group": "delight_fm"
+    },
+    "exported/delight_fm/log_normalized_gene_by_cell.mtx": {
+      "bytes": 31830588587,
+      "sha256": "0e7d15ef0d4d637ae3c42ec2673725071ef2fb76ee299458ff29347afe1c14e7",
+      "group": "delight_fm"
+    },
+    "exported/delight_fm/obs.csv.gz": {
+      "bytes": 5648529,
+      "sha256": "b0362d8ae9f20851ef501625669de69c2f7136e96ec635681b5cd17be004df4a",
+      "group": "delight_fm"
+    },
+    "exported/delight_fm/umap_harmony.csv.gz": {
+      "bytes": 16061458,
+      "sha256": "686b8f62e56bcf57836693993ee2143cd0068c309c83b94cdbe24b3d2ebea92d",
+      "group": "delight_fm"
+    },
+    "exported/delight_fm/var.csv": {
+      "bytes": 1038734,
+      "sha256": "0a9a5d88bbba39f7a0999901afb871b7167e7aee6dcf6927fa64be2b3d0e1a9c",
+      "group": "delight_fm"
+    },
+    "exported/epithelium_colon/export_provenance.rds": {
+      "bytes": 44578,
+      "sha256": "a56b7e2fa4f5f9e027f22697d011f31ce928df7995c5bf954cfcc0a993ab1b49",
+      "group": "epithelium_colon"
+    },
+    "exported/epithelium_colon/log_normalized_gene_by_cell.mtx": {
+      "bytes": 6524591675,
+      "sha256": "b621062ceb5609d167d878eb396caef38a571854987b5dfaa3a6e227babbf673",
+      "group": "epithelium_colon"
+    },
+    "exported/epithelium_colon/obs.csv.gz": {
+      "bytes": 888957,
+      "sha256": "3ee9653c948c80b1341da9dd7340d3e6330f562cd3062b13ff31e08ec98eda7e",
+      "group": "epithelium_colon"
+    },
+    "exported/epithelium_colon/umap_harmony.csv.gz": {
+      "bytes": 2708804,
+      "sha256": "ae6366071f3d43dcb1b17ef87eb117995bb847109b9629c35866ab82e5554240",
+      "group": "epithelium_colon"
+    },
+    "exported/epithelium_colon/var.csv": {
+      "bytes": 1041949,
+      "sha256": "670ae6e7da90c30daaf48f8cbca01714c05b93f67f0aacf4b2d855138166ded8",
+      "group": "epithelium_colon"
+    },
+    "exported/epithelium_ileum/export_provenance.rds": {
+      "bytes": 44573,
+      "sha256": "9c4326d153cf82e89c71f90053168c83cb880f2e1aaac5ea1cb01d54ce661f05",
+      "group": "epithelium_ileum"
+    },
+    "exported/epithelium_ileum/log_normalized_gene_by_cell.mtx": {
+      "bytes": 5175883374,
+      "sha256": "f11f82ad308a8e4a8c0ca9d38995a670d9f516de0c193ad31b79f3c237440fd9",
+      "group": "epithelium_ileum"
+    },
+    "exported/epithelium_ileum/obs.csv.gz": {
+      "bytes": 649756,
+      "sha256": "8c7e6baf9bdea8536b575c413281185ccacc854ba7f44fe8c3e93ec0ee24c41c",
+      "group": "epithelium_ileum"
+    },
+    "exported/epithelium_ileum/umap_harmony.csv.gz": {
+      "bytes": 2015010,
+      "sha256": "1af3b7fa17dc16f36ed6e37ec9a468aba41329ec9868dd5918bf02f0eeeef38b",
+      "group": "epithelium_ileum"
+    },
+    "exported/epithelium_ileum/var.csv": {
+      "bytes": 1040166,
+      "sha256": "66197c5e96a6c9d0c0360d3b67e03713e10e8da9964c2c0c8ce141f7c047b0f2",
+      "group": "epithelium_ileum"
+    },
+    "exported/immune/export_provenance.rds": {
+      "bytes": 44527,
+      "sha256": "3fadb0a5f8ab035b8ff2a8b23166f06e1ee26de5807da8a55cde9545567b08f6",
+      "group": "immune"
+    },
+    "exported/immune/log_normalized_gene_by_cell.mtx": {
+      "bytes": 6753755519,
+      "sha256": "0dbcff23ee517b537a3c6b157bfb4c901c8379a0cfab9b3348127aa008e73cca",
+      "group": "immune"
+    },
+    "exported/immune/obs.csv.gz": {
+      "bytes": 1752489,
+      "sha256": "bb33ce74075e5e1c7a80683588d10e66cdff9c8e5f2d97e7899bfae89ab6fd93",
+      "group": "immune"
+    },
+    "exported/immune/umap_harmony.csv.gz": {
+      "bytes": 5102496,
+      "sha256": "11b49196aaf1a594c36a2a8c23ab1009c6b52763631bfa6a99181f1ce3ab5eb3",
+      "group": "immune"
+    },
+    "exported/immune/var.csv": {
+      "bytes": 1039439,
+      "sha256": "03f9edbeb1fac31d13f54954ea0951f3c95561e36a326286be61b703ce08dbae",
+      "group": "immune"
+    },
+    "exported/stromal/export_provenance.rds": {
+      "bytes": 44528,
+      "sha256": "75415cf8f3b61e986aed3f05406711be5fd2921cc90499df2311a2c768a79114",
+      "group": "stromal"
+    },
+    "exported/stromal/log_normalized_gene_by_cell.mtx": {
+      "bytes": 12865697395,
+      "sha256": "819d947d05a525692644d41b8f71e1ff6e2146c8e9bd8b6a42088fdf1abe681d",
+      "group": "stromal"
+    },
+    "exported/stromal/obs.csv.gz": {
+      "bytes": 2273686,
+      "sha256": "364bc5e47be97ad2de48c68429e76ecffcbe115f3050652a83dca6270ad8b2d9",
+      "group": "stromal"
+    },
+    "exported/stromal/umap_harmony.csv.gz": {
+      "bytes": 6484673,
+      "sha256": "c05f156cb3634b8758938af067f8be134495eb3df1d8b2a8dd9b0f7c2efaa913",
+      "group": "stromal"
+    },
+    "exported/stromal/var.csv": {
+      "bytes": 1040451,
+      "sha256": "21e4060ca7f4b3b2c7285d201816d3ea1c5cdcf1279ee03b3e2fbdb2602e5b74",
+      "group": "stromal"
+    },
+    "tokenized/delight_fm/atlas_geneformer_ready.h5ad": {
+      "bytes": 12576369686,
+      "sha256": "ea2c3810e7842340443fc53510b34048c6facb571840b20bb0c04c8b9f2904dc",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/label_maps.json": {
+      "bytes": 5715,
+      "sha256": "341aee1340924522926911a4577e7bd9cff8b27fcaa57a7790e9911d15d5bdf4",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/test.dataset/data-00000-of-00008.arrow": {
+      "bytes": 471682784,
+      "sha256": "11e5743408178264bb45fd6e71a8189a7aa2cfb0bbe1ac90a3c12655462e1bf5",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/test.dataset/data-00001-of-00008.arrow": {
+      "bytes": 461039856,
+      "sha256": "cf4e0d9f9ac25f4a18a3c54c4f0980a6f131281c87f310812300825d0579a1b3",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/test.dataset/data-00002-of-00008.arrow": {
+      "bytes": 378361568,
+      "sha256": "ac0dc6663fdfb8bcc783a40eacf76b34b145e3941fd490ff520fceab657858a4",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/test.dataset/data-00003-of-00008.arrow": {
+      "bytes": 550273664,
+      "sha256": "93bd67d7c8a17e1d35cb28ee3c0ffb479af355308160536939f1110ed40b5dc0",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/test.dataset/data-00004-of-00008.arrow": {
+      "bytes": 564497448,
+      "sha256": "c8c958288e442fae475b5110f597d0dfcc3616da28d94a610b38a1ce4d63249e",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/test.dataset/data-00005-of-00008.arrow": {
+      "bytes": 433866344,
+      "sha256": "331371625803bfb3253916345e8bff6ba5841f39f830d1259abe432ab64b2b43",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/test.dataset/data-00006-of-00008.arrow": {
+      "bytes": 428606144,
+      "sha256": "4981b04e7c91316e509054890081fb1acdae61a7cabc46446cde3b6021abcc51",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/test.dataset/data-00007-of-00008.arrow": {
+      "bytes": 474288008,
+      "sha256": "315c19a013e28351f434afd081e74cafb2d2d3278f0923c5d23012ed4597712e",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/test.dataset/dataset_info.json": {
+      "bytes": 2179,
+      "sha256": "f17e4a630be91d0aa7af5ab3ca4bba636e85036b69a1ffd283c1803b27422864",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/test.dataset/state.json": {
+      "bytes": 660,
+      "sha256": "bf46d52ea16e71c4ca624f14b94a8fd46d751c2101270121779a551929bdad0f",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00000-of-00029.arrow": {
+      "bytes": 387765248,
+      "sha256": "41dee8d02358a0488e232f0b01fdfed1080cfa1a6e29f88ca959adb0b1f861d7",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00001-of-00029.arrow": {
+      "bytes": 587462416,
+      "sha256": "84b5942b8bc2e951517e9f2a68e5fd9f27e7df6ae41197e85e20101341a713d9",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00002-of-00029.arrow": {
+      "bytes": 601605768,
+      "sha256": "b741f2835ccadc44417100328ee6b3194fe88ef16216d5102f79cac0eeda0618",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00003-of-00029.arrow": {
+      "bytes": 486236016,
+      "sha256": "e5a26687a553d49963ea54b54b2b1ac723bf313b0d4dabb94fa21b4bb0f7fe85",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00004-of-00029.arrow": {
+      "bytes": 512892176,
+      "sha256": "7b8c62bb0b5f4b2f80ad3b7867fe2d7782d6bf3e264586fed329030d930bb3d7",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00005-of-00029.arrow": {
+      "bytes": 477859656,
+      "sha256": "9d4c0f28a4883901896e3027b309f774767c2a01b6716743842ed9d924179213",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00006-of-00029.arrow": {
+      "bytes": 444883400,
+      "sha256": "a480775b1cd7861b0e3df887e5889cb1fb3d8e3555421099c7f138e679ef54fa",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00007-of-00029.arrow": {
+      "bytes": 391192368,
+      "sha256": "51b4508ecf7b8b802872282cf6f00d19aed7bfc855940fa9334900ec5aeea475",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00008-of-00029.arrow": {
+      "bytes": 312453736,
+      "sha256": "225c50a0aa59596f3eef9aeb8ebe815a03ffdbac4007ae0ab2c7172804530927",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00009-of-00029.arrow": {
+      "bytes": 629283176,
+      "sha256": "bd16458dc4b04a083cbf85dbda5d7594849243af34ae02229166400531ebec25",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00010-of-00029.arrow": {
+      "bytes": 570016168,
+      "sha256": "2d45fc9947f237e9b22895acc8fd3d416bd24a5949d5690258c68d64047cf226",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00011-of-00029.arrow": {
+      "bytes": 577248584,
+      "sha256": "9c0b789ad210fa607df8b70bf85d7c9f1f5a590b13ddf5e76367b1d40f648356",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00012-of-00029.arrow": {
+      "bytes": 489934808,
+      "sha256": "be9fd233b0c012dac5adf8caadb0225ead1097326deba12d1a6c2620615edc71",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00013-of-00029.arrow": {
+      "bytes": 486318400,
+      "sha256": "98401297cbc1aaeede9dd48e41097e112ca3f8c665d203c927742f93cc2bec38",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00014-of-00029.arrow": {
+      "bytes": 508626144,
+      "sha256": "7478b17be5a217e1ae8dc828b951e937ad77c7447634f4fe09e1b73a360ca47a",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00015-of-00029.arrow": {
+      "bytes": 622730768,
+      "sha256": "d101435dcf0c8ea11b13df3bc3aad4536c99f7562d6160160301c269455b1355",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00016-of-00029.arrow": {
+      "bytes": 471620056,
+      "sha256": "d1f3eb6acef5324aa88e49d3fade766aba819bfefaccbc92a8336d04e977fb2a",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00017-of-00029.arrow": {
+      "bytes": 518757400,
+      "sha256": "86f2b985e35ac563a76c7e66bf84511cde7fe50fb1aeb1165ca1c5acea71baff",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00018-of-00029.arrow": {
+      "bytes": 497121544,
+      "sha256": "92a70ea5d8f7d9c7a9654565b55e135b42ff9b1840ce6bc20227e803faf8190b",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00019-of-00029.arrow": {
+      "bytes": 475481344,
+      "sha256": "2012e8b8cc08323c2c443ccf853a60cada29ff06792019613097ca4a25d44d02",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00020-of-00029.arrow": {
+      "bytes": 563931744,
+      "sha256": "506f7576c64923bea07da99130c3d06119c9a881cb09a809e2f69d389e152b00",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00021-of-00029.arrow": {
+      "bytes": 434325072,
+      "sha256": "cbbf669bf0c4aba7308fbde421448c5f44f6a429303d906d7febb42ba132fb79",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00022-of-00029.arrow": {
+      "bytes": 323408920,
+      "sha256": "9bf0052efc9ec4f3765a02f183dae080e48839be0e369fcbb96b55c661e448ab",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00023-of-00029.arrow": {
+      "bytes": 368174536,
+      "sha256": "2b57c65722b3de7c4597e41819c0a7e603741f62237ce7d5ffe5591b2e61ad7d",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00024-of-00029.arrow": {
+      "bytes": 450071680,
+      "sha256": "cd3bd4a5fedd6aed3096725dcbf8b4d4e94500b9b6778cbb1802cd4991437319",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00025-of-00029.arrow": {
+      "bytes": 447646408,
+      "sha256": "b6e33864e29516e4b4315aa742db1fbd5c70004ac66c60ab1d706bd6d8478250",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00026-of-00029.arrow": {
+      "bytes": 393401856,
+      "sha256": "04c19402094727c2a4f4fed3fe4d86daab933c8a9909d02e3ae6307d041210fe",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00027-of-00029.arrow": {
+      "bytes": 616784440,
+      "sha256": "e6235ca96b48cd484e3e384e3348a9979612c876f3fa0a623855047602c433e3",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/data-00028-of-00029.arrow": {
+      "bytes": 500816368,
+      "sha256": "7299ad8425debcd044648b49b0e575211f9e07686414d00d4c80ef944a7580f9",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/dataset_info.json": {
+      "bytes": 2179,
+      "sha256": "f17e4a630be91d0aa7af5ab3ca4bba636e85036b69a1ffd283c1803b27422864",
+      "group": "delight_fm"
+    },
+    "tokenized/delight_fm/train.dataset/state.json": {
+      "bytes": 1899,
+      "sha256": "31e05b628ee65506e73e2e6032386ed5d609e8064ba8eb5f184dfbf22ed3bc4c",
+      "group": "delight_fm"
+    },
+    "tokenized/epithelium_colon/atlas_geneformer_ready.h5ad": {
+      "bytes": 2645509386,
+      "sha256": "9038f830efd8ada69b125c68f6e505c39924f3439dbe9636bbcda3fc4a88e80b",
+      "group": "epithelium_colon"
+    },
+    "tokenized/epithelium_colon/label_maps.json": {
+      "bytes": 2757,
+      "sha256": "fff46e8ea2a11558ade99c1422036080d91626ec86614bba3cc8ab0345dd004f",
+      "group": "epithelium_colon"
+    },
+    "tokenized/epithelium_colon/test.dataset/data-00000-of-00002.arrow": {
+      "bytes": 387904056,
+      "sha256": "9c287d404fcd9e28faf129c0acd286310630ed85f01d46d7f269c44cc4caa9d0",
+      "group": "epithelium_colon"
+    },
+    "tokenized/epithelium_colon/test.dataset/data-00001-of-00002.arrow": {
+      "bytes": 295237520,
+      "sha256": "a55256634859877f936ea242801a6a14097267b6f3f9ffe9b59d6444bcbcb5dc",
+      "group": "epithelium_colon"
+    },
+    "tokenized/epithelium_colon/test.dataset/dataset_info.json": {
+      "bytes": 2259,
+      "sha256": "b5935488405828abb7029320a6cd5cd4e23b475820cad1cc9bbc350c2a6622f6",
+      "group": "epithelium_colon"
+    },
+    "tokenized/epithelium_colon/test.dataset/state.json": {
+      "bytes": 306,
+      "sha256": "640b611573633e7a6fb48fa941f59fd7399769140ef3b99677cc8e90ef6ee4e4",
+      "group": "epithelium_colon"
+    },
+    "tokenized/epithelium_colon/train.dataset/data-00000-of-00006.arrow": {
+      "bytes": 476934776,
+      "sha256": "b1e6afda602538f42b9b7cdc3c50094ef677b7d69bed078d331b6e1c364de545",
+      "group": "epithelium_colon"
+    },
+    "tokenized/epithelium_colon/train.dataset/data-00001-of-00006.arrow": {
+      "bytes": 497452112,
+      "sha256": "1a770bcf8e54e8607a7ff5ce8fa6139a86d8e961a0b613a67a0f4c153154f3ac",
+      "group": "epithelium_colon"
+    },
+    "tokenized/epithelium_colon/train.dataset/data-00002-of-00006.arrow": {
+      "bytes": 446029184,
+      "sha256": "2eedf1d2b40ffb57ba824d4fa33d68e3944279936d4c0741a27dcdb3b96ba57a",
+      "group": "epithelium_colon"
+    },
+    "tokenized/epithelium_colon/train.dataset/data-00003-of-00006.arrow": {
+      "bytes": 398140600,
+      "sha256": "c7967ce9a3cf158432a8f1fd68cc3d1e95a06b110a4490d0b9f588e8866853f8",
+      "group": "epithelium_colon"
+    },
+    "tokenized/epithelium_colon/train.dataset/data-00004-of-00006.arrow": {
+      "bytes": 402654024,
+      "sha256": "373260d113102fd8715104e563ee390271b3de840fa2e41953e74022ffed765e",
+      "group": "epithelium_colon"
+    },
+    "tokenized/epithelium_colon/train.dataset/data-00005-of-00006.arrow": {
+      "bytes": 478866488,
+      "sha256": "aa8ff7851dc2a18bf7c37ca3aaa8dca6546fa13b3c24663d5bd2653a3d155461",
+      "group": "epithelium_colon"
+    },
+    "tokenized/epithelium_colon/train.dataset/dataset_info.json": {
+      "bytes": 2259,
+      "sha256": "b5935488405828abb7029320a6cd5cd4e23b475820cad1cc9bbc350c2a6622f6",
+      "group": "epithelium_colon"
+    },
+    "tokenized/epithelium_colon/train.dataset/state.json": {
+      "bytes": 542,
+      "sha256": "e01a371d2678e31ee4558cfab70414da1ef13ae58156090a2bb60d107938e081",
+      "group": "epithelium_colon"
+    },
+    "tokenized/epithelium_ileum/atlas_geneformer_ready.h5ad": {
+      "bytes": 2108953745,
+      "sha256": "ee3f7d3a874c861e80dcb73ac49a065eccf78b68a891ff4f18fe169fdbcfaea3",
+      "group": "epithelium_ileum"
+    },
+    "tokenized/epithelium_ileum/label_maps.json": {
+      "bytes": 2287,
+      "sha256": "3cf3438a6d123cabb80990e2d25fc788e7099777a10ed11f9d9b870058c7a69c",
+      "group": "epithelium_ileum"
+    },
+    "tokenized/epithelium_ileum/test.dataset/data-00000-of-00001.arrow": {
+      "bytes": 474384496,
+      "sha256": "dfd8a91f8202142cad99ca107e19c52a2549432ef5d46bf1473cfde1b3e8b935",
+      "group": "epithelium_ileum"
+    },
+    "tokenized/epithelium_ileum/test.dataset/dataset_info.json": {
+      "bytes": 2259,
+      "sha256": "b5935488405828abb7029320a6cd5cd4e23b475820cad1cc9bbc350c2a6622f6",
+      "group": "epithelium_ileum"
+    },
+    "tokenized/epithelium_ileum/test.dataset/state.json": {
+      "bytes": 247,
+      "sha256": "3bc42664dc2151a24b0f0f219b851e8163dc882d23baa9147074367873228d85",
+      "group": "epithelium_ileum"
+    },
+    "tokenized/epithelium_ileum/train.dataset/data-00000-of-00005.arrow": {
+      "bytes": 407411752,
+      "sha256": "30cc6bfc38bc13a6d2a2bc742f72b937c3f571168683b9d790f1b8f3e27606f9",
+      "group": "epithelium_ileum"
+    },
+    "tokenized/epithelium_ileum/train.dataset/data-00001-of-00005.arrow": {
+      "bytes": 404355904,
+      "sha256": "04ab5b0e6b30b5eab785d035629b6e0480ab3cdd6966d9a73c4940ad26c53d58",
+      "group": "epithelium_ileum"
+    },
+    "tokenized/epithelium_ileum/train.dataset/data-00002-of-00005.arrow": {
+      "bytes": 397102000,
+      "sha256": "445cf015809a3bfcbe3dad464d9e35cd9acdab435712b5e70c29866414275a5e",
+      "group": "epithelium_ileum"
+    },
+    "tokenized/epithelium_ileum/train.dataset/data-00003-of-00005.arrow": {
+      "bytes": 433207864,
+      "sha256": "2f8d4e60f3ba2c8411c0825f1c1700009a377159ac8f4a835a9ff1fea1b27ade",
+      "group": "epithelium_ileum"
+    },
+    "tokenized/epithelium_ileum/train.dataset/data-00004-of-00005.arrow": {
+      "bytes": 406112608,
+      "sha256": "a551d5e957952e039739d68ea9decf4f8650f0d3919a366ae25a573f6f7db3f5",
+      "group": "epithelium_ileum"
+    },
+    "tokenized/epithelium_ileum/train.dataset/dataset_info.json": {
+      "bytes": 2259,
+      "sha256": "b5935488405828abb7029320a6cd5cd4e23b475820cad1cc9bbc350c2a6622f6",
+      "group": "epithelium_ileum"
+    },
+    "tokenized/epithelium_ileum/train.dataset/state.json": {
+      "bytes": 483,
+      "sha256": "d88571f65a49ef38c36996254b010649c107196abb0796376a2a45edbc241411",
+      "group": "epithelium_ileum"
+    },
+    "tokenized/immune/atlas_geneformer_ready.h5ad": {
+      "bytes": 2716034383,
+      "sha256": "3a8e50afaa6633703e1443e07d6c3cd4938abfe59d7a62a61f817346cc888cb4",
+      "group": "immune"
+    },
+    "tokenized/immune/label_maps.json": {
+      "bytes": 3220,
+      "sha256": "7201ce49ecab9749c66ab6e616a5026d9ab6858328984ad6ca0ea6e8a29ca1c9",
+      "group": "immune"
+    },
+    "tokenized/immune/test.dataset/data-00000-of-00002.arrow": {
+      "bytes": 327769344,
+      "sha256": "2bd6fa036b7e346b0b9e8185c022dafb640e26f490b93a0d67185759d39c136e",
+      "group": "immune"
+    },
+    "tokenized/immune/test.dataset/data-00001-of-00002.arrow": {
+      "bytes": 398986928,
+      "sha256": "8559dbb98c06194cb35558530b9bb112cc01b3cb04a1342786bc8271bd932ffb",
+      "group": "immune"
+    },
+    "tokenized/immune/test.dataset/dataset_info.json": {
+      "bytes": 2179,
+      "sha256": "f17e4a630be91d0aa7af5ab3ca4bba636e85036b69a1ffd283c1803b27422864",
+      "group": "immune"
+    },
+    "tokenized/immune/test.dataset/state.json": {
+      "bytes": 306,
+      "sha256": "26bdb0ae1f2163fd7bd40675e16c606860c5be97634706b97a9a01b9c0803ecc",
+      "group": "immune"
+    },
+    "tokenized/immune/train.dataset/data-00000-of-00008.arrow": {
+      "bytes": 456185096,
+      "sha256": "a8ea81ede29cbbb5f0b8b1e21017c00956e83570f1a63251a72b494b5ce5f3f5",
+      "group": "immune"
+    },
+    "tokenized/immune/train.dataset/data-00001-of-00008.arrow": {
+      "bytes": 384429752,
+      "sha256": "7439fdf63755a1c1f3a1b67c39de94ad64c5c30db2352d196f45394fdc57f9ec",
+      "group": "immune"
+    },
+    "tokenized/immune/train.dataset/data-00002-of-00008.arrow": {
+      "bytes": 538018664,
+      "sha256": "2f93c0e610e2889fa41741aa8b2a0e5f2d5c13b354d0cfc53a71ca59f36c6b07",
+      "group": "immune"
+    },
+    "tokenized/immune/train.dataset/data-00003-of-00008.arrow": {
+      "bytes": 410353432,
+      "sha256": "cbb2383769d980d7301b5859a065247a42f5f81240e9c288e27e422ee4268ba9",
+      "group": "immune"
+    },
+    "tokenized/immune/train.dataset/data-00004-of-00008.arrow": {
+      "bytes": 547034208,
+      "sha256": "b39de3df3bf6032cd465c7490dcdc343cf409d55bcaed7131b1cef51ce1a36cb",
+      "group": "immune"
+    },
+    "tokenized/immune/train.dataset/data-00005-of-00008.arrow": {
+      "bytes": 391880576,
+      "sha256": "9dfef27b76807a63b74c22c4ca8dfc4cb12aec8e2117a52023e79413b1e05e8d",
+      "group": "immune"
+    },
+    "tokenized/immune/train.dataset/data-00006-of-00008.arrow": {
+      "bytes": 452439568,
+      "sha256": "45d465e8cd57476c7c74f05a4ad75f46ba7f5736b7bcb3e3105386012382f730",
+      "group": "immune"
+    },
+    "tokenized/immune/train.dataset/data-00007-of-00008.arrow": {
+      "bytes": 399389808,
+      "sha256": "003f4a3792903c81da94c00a5240691b3a584235c0f92c724b619ec930f75e60",
+      "group": "immune"
+    },
+    "tokenized/immune/train.dataset/dataset_info.json": {
+      "bytes": 2179,
+      "sha256": "f17e4a630be91d0aa7af5ab3ca4bba636e85036b69a1ffd283c1803b27422864",
+      "group": "immune"
+    },
+    "tokenized/immune/train.dataset/state.json": {
+      "bytes": 660,
+      "sha256": "947cdece5d845b3f5158738239ea1de5b88fb2ee7fe0ebba20b98e1489000c7d",
+      "group": "immune"
+    },
+    "tokenized/stromal/atlas_geneformer_ready.h5ad": {
+      "bytes": 5114054455,
+      "sha256": "04dceeb9758ef756c59f462f26ee11d4139a3617ee2474aa992c712b0f78dd4c",
+      "group": "stromal"
+    },
+    "tokenized/stromal/label_maps.json": {
+      "bytes": 3499,
+      "sha256": "606100a50f5a232d0f87faaf6530c247541888dcc0275585df1fcb8dd6d35358",
+      "group": "stromal"
+    },
+    "tokenized/stromal/test.dataset/data-00000-of-00004.arrow": {
+      "bytes": 411813184,
+      "sha256": "21315d9153531b6671d089cac46baea31e710a28c8f9dec1f0d028992bd6e6e4",
+      "group": "stromal"
+    },
+    "tokenized/stromal/test.dataset/data-00001-of-00004.arrow": {
+      "bytes": 463150856,
+      "sha256": "143baf1861cf01769e20a3293c659b3522c54c852d8bd09f51ae4437288742b4",
+      "group": "stromal"
+    },
+    "tokenized/stromal/test.dataset/data-00002-of-00004.arrow": {
+      "bytes": 470505384,
+      "sha256": "113bb4acf78806cbccab5ea71acc3fa57c6f09e16937abdb3112777543c44b94",
+      "group": "stromal"
+    },
+    "tokenized/stromal/test.dataset/data-00003-of-00004.arrow": {
+      "bytes": 421446432,
+      "sha256": "d067f05b68750a74884048977e26cc6fc66bc61b37744f4baa2150e4b4f9b7b8",
+      "group": "stromal"
+    },
+    "tokenized/stromal/test.dataset/dataset_info.json": {
+      "bytes": 2179,
+      "sha256": "f17e4a630be91d0aa7af5ab3ca4bba636e85036b69a1ffd283c1803b27422864",
+      "group": "stromal"
+    },
+    "tokenized/stromal/test.dataset/state.json": {
+      "bytes": 424,
+      "sha256": "0eac265652f3f406eb759351e4e73326c9b604eff278eb44dfd057e618945dd0",
+      "group": "stromal"
+    },
+    "tokenized/stromal/train.dataset/data-00000-of-00012.arrow": {
+      "bytes": 460879008,
+      "sha256": "0c42af4ccc8aced5bd377c5f27c2791b88dbde6526a8fda6bf539302abad9ee7",
+      "group": "stromal"
+    },
+    "tokenized/stromal/train.dataset/data-00001-of-00012.arrow": {
+      "bytes": 472717856,
+      "sha256": "098b567036d3d760c5c5e66f43cc1bba9f262ddc334826a7e69700c72014c36e",
+      "group": "stromal"
+    },
+    "tokenized/stromal/train.dataset/data-00002-of-00012.arrow": {
+      "bytes": 476209944,
+      "sha256": "a6e1c58605436db382bc6e4bd62ad4e33be6bde8283960128658b618c8c759e9",
+      "group": "stromal"
+    },
+    "tokenized/stromal/train.dataset/data-00003-of-00012.arrow": {
+      "bytes": 419776680,
+      "sha256": "51f6b1d27ee7c8a198e114133311b7617a3f30128c63a5a50c7592adf59f31ac",
+      "group": "stromal"
+    },
+    "tokenized/stromal/train.dataset/data-00004-of-00012.arrow": {
+      "bytes": 536941544,
+      "sha256": "909f21ece4e9ae99ef6992f4d5de3bc9034d3beb394947a65f2c3ac09e7bae84",
+      "group": "stromal"
+    },
+    "tokenized/stromal/train.dataset/data-00005-of-00012.arrow": {
+      "bytes": 543441232,
+      "sha256": "0ad37c25ee24aad27138bcebd9c1ffaa82a65c4fdb7b4eeacdec297f9dc3cafd",
+      "group": "stromal"
+    },
+    "tokenized/stromal/train.dataset/data-00006-of-00012.arrow": {
+      "bytes": 495845488,
+      "sha256": "8e3cbbc598607795d8b478eb481e2fffa36217df663cc79698b68ff636be1b81",
+      "group": "stromal"
+    },
+    "tokenized/stromal/train.dataset/data-00007-of-00012.arrow": {
+      "bytes": 570846968,
+      "sha256": "a2ef10e62c7e45e37418e1ba8ada5c86ad12bcee2b731aff50c1ae7af965ea0c",
+      "group": "stromal"
+    },
+    "tokenized/stromal/train.dataset/data-00008-of-00012.arrow": {
+      "bytes": 481265328,
+      "sha256": "9dc71b26e8b4ad6e791ef4d159678f9d5f8b24a1c27afd9b1003383ae6cc1e88",
+      "group": "stromal"
+    },
+    "tokenized/stromal/train.dataset/data-00009-of-00012.arrow": {
+      "bytes": 475474600,
+      "sha256": "7a782333d4782696fb8cf8f3a89647c8ee563535cc0d552ebd38e3879cb10bc7",
+      "group": "stromal"
+    },
+    "tokenized/stromal/train.dataset/data-00010-of-00012.arrow": {
+      "bytes": 515936936,
+      "sha256": "e4a5dd042b2c1634eeae4cad5c2059112030580afdf323dbf4b3466cd776ef8f",
+      "group": "stromal"
+    },
+    "tokenized/stromal/train.dataset/data-00011-of-00012.arrow": {
+      "bytes": 484129992,
+      "sha256": "21b8952836b400a4858adbf956d94845d029c17503c6dd617d19fbaa78a0cdf6",
+      "group": "stromal"
+    },
+    "tokenized/stromal/train.dataset/dataset_info.json": {
+      "bytes": 2179,
+      "sha256": "f17e4a630be91d0aa7af5ab3ca4bba636e85036b69a1ffd283c1803b27422864",
+      "group": "stromal"
+    },
+    "tokenized/stromal/train.dataset/state.json": {
+      "bytes": 896,
+      "sha256": "d49177ca45c98c13ba7db000d0df6cea9e587947845813acb3245cb06de8054f",
+      "group": "stromal"
+    }
+  }
+}

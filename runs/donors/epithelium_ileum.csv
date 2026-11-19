@@ -1,0 +1,85 @@
+sample_id,SplitDonor,n_cells,AgeGroup,PCW
+390C,TRAIN,3365,"Adult, 60+",3394.0
+403C,TRAIN,3,"Adult, 40+",2874.0
+412C,TEST,192,"Adult, 60+",3914.0
+414C,TRAIN,9,"Adult, 40+",2874.0
+423C,TRAIN,154,"Adult, 60+",3394.0
+428C,TRAIN,698,"Adult, 40+",2874.0
+A32 (411C),TEST,3534,Young adults,1314.0
+A34 (417C),TEST,732,"Adult, 60+",3394.0
+A39 (440C),TEST,77,"Adult, 40+",2354.0
+A66_759B,TRAIN,7,Young adults,1314.0
+A68_770C,TRAIN,4321,"Adult, 60+",3394.0
+BRC2026,TEST,190,First trimester,9.0
+BRC2029,TRAIN,20,First trimester,6.0
+BRC2043,TRAIN,2586,First trimester,10.0
+BRC2046,TRAIN,431,First trimester,6.5
+BRC2049,TRAIN,437,First trimester,6.5
+BRC2119,TRAIN,849,First trimester,7.5
+BRC2121,TRAIN,2772,First trimester,10.0
+BRC2133,TRAIN,1135,First trimester,10.0
+BRC2134,TRAIN,1221,First trimester,10.0
+BRC2258,TEST,1860,First trimester,11.0
+DFC_AAC,TRAIN,418,First trimester,9.0
+DFC_AAP,TRAIN,232,Second trimester,22.0
+DFC_AAQ,TRAIN,70,Second trimester,15.0
+DFC_AAT,TRAIN,484,First trimester,12.0
+DFC_AAU,TEST,148,First trimester,10.0
+DFC_ABF,TRAIN,277,First trimester,10.0
+DFC_ABI,TRAIN,360,Second trimester,18.0
+DFC_ABK,TRAIN,1519,Second trimester,13.0
+DFC_ABM,TRAIN,340,First trimester,8.0
+DFC_ABN,TRAIN,230,Second trimester,13.0
+DFC_ABV,TRAIN,377,Second trimester,17.0
+DFC_ABZ,TEST,592,First trimester,8.0
+DFC_ACB,TRAIN,250,Second trimester,20.0
+F66,TRAIN,1406,Second trimester,15.0
+F67,TRAIN,174,First trimester,12.0
+F72,TEST,4464,Second trimester,17.0
+F73,TRAIN,1572,Second trimester,16.0
+F78,TRAIN,1220,Second trimester,17.0
+HDBR_ACC1,TRAIN,1785,Second trimester,22.0
+HDBR_ADC1,TRAIN,879,First trimester,12.0
+HDBR_ADC2,TRAIN,1542,First trimester,12.0
+HDBR_ADY3,TRAIN,1291,First trimester,12.0
+HDBR_AEI1,TRAIN,465,Second trimester,20.0
+HT-228,TRAIN,534,Second trimester,15.0
+HT-234,TRAIN,771,First trimester,12.0
+HT-236,TRAIN,822,Second trimester,19.0
+HT-243,TRAIN,358,First trimester,9.5
+HT-260,TRAIN,1231,First trimester,9.0
+Ileum-1,TRAIN,2820,"Adult, 60+",3160.0
+Ileum-2/Colon-2,TRAIN,3786,"Adult, 60+",3524.0
+MIM_AAC/2,TEST,441,Teenager,861.0
+MIM_AAT,TRAIN,2445,Newborn,25.0
+MIM_AAV,TRAIN,857,< 6 Months,43.0
+MIM_ABA,TEST,706,< 2 Months,41.0
+MIM_ABB,TRAIN,575,< 1 Month,32.0
+MIM_ABC,TRAIN,661,< 6 Months,38.0
+MIM_ABG,TRAIN,139,< 1 Month,41.0
+MIM_ABK,TRAIN,341,< 1 Year,74.0
+MIM_ABO,TEST,450,< 2 Months,35.0
+MIM_ABR,TRAIN,235,< 2 Years,111.0
+MIM_ABV,TRAIN,401,2 Years+,358.0
+MIM_ABZ,TRAIN,380,< 6 Months,58.0
+MIM_ACB,TRAIN,750,Teenager,625.0
+MIM_ACC2,TRAIN,606,< 2 Years,101.0
+MIM_ACF,TRAIN,499,< 2 Months,35.0
+MIM_ACF/2,TRAIN,1008,< 6 Months,41.0
+MIM_ACS,TRAIN,955,< 2 Years,137.0
+MIM_ADA,TEST,1178,< 6 Months,49.0
+MIM_ADB,TRAIN,507,< 2 Months,45.0
+MIM_ADE,TRAIN,302,< 1 Month,29.0
+MIM_ADH,TRAIN,1903,< 2 Months,36.0
+MIM_ADI,TRAIN,1210,< 2 Months,35.0
+MIM_ADK,TRAIN,528,< 6 Months,40.0
+T024,TRAIN,904,Teenager,664.0
+T036,TRAIN,27,2 Years+,248.0
+T036POS,TRAIN,2030,2 Years+,248.0
+T044,TRAIN,743,Teenager,560.0
+T057,TRAIN,936,2 Years+,352.0
+T110POS,TRAIN,1732,2 Years+,248.0
+T160,TRAIN,261,Teenager,560.0
+T161,TRAIN,176,2 Years+,248.0
+T182,TRAIN,582,2 Years+,508.0
+donor1,TRAIN,2935,Young adults,1652.0

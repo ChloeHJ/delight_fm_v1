@@ -1,0 +1,179 @@
+{
+  "model_python": null,
+  "sweep": {
+    "training_epochs": 10,
+    "checkpoint_epochs": [
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0,
+      4.5,
+      5.0,
+      5.5,
+      6.0,
+      6.5,
+      7.0,
+      7.5,
+      8.0,
+      8.5,
+      9.0,
+      9.5,
+      10.0
+    ],
+    "merged_configurations": [
+      [
+        4,
+        256,
+        "3e-4"
+      ],
+      [
+        4,
+        256,
+        "1e-4"
+      ],
+      [
+        4,
+        512,
+        "3e-4"
+      ],
+      [
+        4,
+        512,
+        "1e-4"
+      ],
+      [
+        6,
+        512,
+        "2e-4"
+      ],
+      [
+        6,
+        512,
+        "1e-4"
+      ]
+    ],
+    "lineage_configurations": [
+      [
+        4,
+        256,
+        "3e-4"
+      ],
+      [
+        4,
+        256,
+        "1e-4"
+      ],
+      [
+        4,
+        512,
+        "3e-4"
+      ],
+      [
+        6,
+        512,
+        "2e-4"
+      ]
+    ],
+    "batch_size": 8,
+    "max_length": 2048,
+    "seed": 42
+  },
+  "downstream": {
+    "epochs": 1,
+    "learning_rate": 0.000804,
+    "weight_decay": 0.01,
+    "warmup_steps": 100,
+    "batch_size": 8,
+    "eval_batch_size": 32,
+    "max_cells_per_class": 2000,
+    "cv_folds": 5,
+    "seed": 73
+  },
+  "age_model": {
+    "epochs": 1,
+    "learning_rate": 5e-05,
+    "batch_size": 8,
+    "eval_batch_size": 16,
+    "weight_decay": 0.01,
+    "warmup_steps": 0,
+    "seed": 42
+  },
+  "perturbation": {
+    "genes_per_shard": 64,
+    "checkpoint_genes": 16,
+    "batch_size": 16,
+    "tfs_per_shard": 10,
+    "collectri_tfs": [
+      "ERG",
+      "FOXF2",
+      "GRHL2",
+      "IKZF1",
+      "MYOD1",
+      "NEUROD1",
+      "NEUROD2",
+      "PAX5",
+      "PRRX1",
+      "SOX17",
+      "SPI1",
+      "TCF21",
+      "TWIST1"
+    ],
+    "collectri_table": "data/collectri/human.tsv"
+  },
+  "clustering": {
+    "clusters": 12,
+    "method": "balanced_magnitude_aware_ward",
+    "focus_tfs": [
+      "ARID3A",
+      "TCF7L1",
+      "BHLHE40"
+    ]
+  },
+  "bhlhe40": {
+    "group": "epithelium_ileum",
+    "strengths": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "target_table": "data/BHLHE40/bound_bulk_targets.csv",
+    "tf": "BHLHE40"
+  },
+  "slurm": {
+    "gpu_partition": "gpu-ada",
+    "cpu_partition": "long,short",
+    "memory": "128G",
+    "cpus": 4,
+    "time": "1-00:00:00",
+    "training_concurrency": 4,
+    "evaluation_concurrency": 6,
+    "perturbation_concurrency": 4
+  },
+  "markers": {
+    "EPCAM": "Epithelium",
+    "CDH1": "Epithelium",
+    "KRT8": "Epithelium",
+    "MUC1": "Epithelium",
+    "CHGA": "Epithelium",
+    "NEUROD1": "Neural",
+    "NEUROG3": "Neural",
+    "DCN": "Fibroblast",
+    "LUM": "Fibroblast",
+    "COL1A1": "Fibroblast",
+    "PDGFRB": "Pericyte",
+    "RGS5": "Pericyte",
+    "PECAM1": "Endothelium",
+    "PTPRC": "T-cell",
+    "CD3D": "T-cell",
+    "CD3E": "T-cell",
+    "MS4A1": "B-cells",
+    "CD19": "B-cells",
+    "CD68": "Myeloid",
+    "CD14": "Myeloid",
+    "LYZ": "Myeloid"
+  }
+}

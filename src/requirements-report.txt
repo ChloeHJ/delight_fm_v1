@@ -1,0 +1,7 @@
+# Reporting may use the site's python-cbrg module, separate from CUDA training.
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+adjustText
