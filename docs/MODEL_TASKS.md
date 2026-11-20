@@ -10,7 +10,7 @@ Five foundation checkpoints and four fitted age checkpoints are public in [Huggi
 | Location classification | Fine-tune location head | Use foundation companion |
 | Predicted developmental age, log2(PCW) | Use lineage age models | Saved age head and fine-tuned backbone |
 | Individual gene and SCENIC+ age deletion | Use lineage age models | Supported directly |
-| Marker gene and CollecTRI broad-cell deletion | Supported using saved broad-cell head | Use merged model |
+| Marker gene and CollecTRI broad-cell deletion | Supported using saved broad-cell head | Use merged (`delight-fm`) model |
 
 Foundation notebook order is:
 
