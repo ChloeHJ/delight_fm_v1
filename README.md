@@ -21,9 +21,7 @@ Run these commands from the root of this repository. The workflow uses two Pytho
 
 ### 1. Create the modeling environment
 
-Use Linux with Python 3.10 and the CUDA 11.8 toolkit available. Make sure CUDA is on your executable and library paths. If your cluster uses environment modules, load its Python and CUDA modules using the names provided by your administrator; module names vary between systems. The launcher does not load modules automatically.
-
-Check that `python3.10 --version` and `nvcc --version` report the expected versions. Building the CUDA extensions from source also requires a compatible C++ compiler.
+Use Linux with Python 3.10 and the CUDA 11.8 toolkit available. Check that `python3.10 --version` and `nvcc --version` report the expected versions. Building the CUDA extensions from source also requires a compatible C++ compiler.
 
 ```bash
 python3.10 -m venv "$HOME/.venvs/delight-fm-model"
@@ -38,7 +36,7 @@ export PYTHON_BIN="$HOME/.venvs/delight-fm-model/bin/python"
 
 Install PyTorch first so the [Mamba](https://github.com/state-spaces/mamba/blob/v2.2.2/setup.py) and [causal-convolution](https://github.com/Dao-AILab/causal-conv1d/blob/v1.4.0/setup.py) extensions can use the matching PyTorch/CUDA environment. `--no-build-isolation` lets their build steps access those installed dependencies. The pinned package versions are recorded in [the modeling requirements](src/requirements-model.txt); the CUDA wheel index follows the [PyTorch installation instructions](https://pytorch.org/get-started/previous-versions/#v222).
 
-The same environment can download the dataset:
+Install the dataset download helper in the same environment (skip this command if it is already installed):
 
 ```bash
 "$PYTHON_BIN" -m pip install huggingface_hub
@@ -71,7 +69,7 @@ PY
 "$REPORT_PYTHON_BIN" -c 'import numpy, pandas, scipy, sklearn, matplotlib, adjustText; print("Reporting imports OK")'
 ```
 
-Expect PyTorch `2.2.2+cu118` and CUDA `11.8`. Run the GPU availability check on a node with an allocated NVIDIA GPU; a login or CPU-only node can report `False`. The workflow runs its full baseline and no-op controls before perturbation screens.
+Expect PyTorch `2.2.2+cu118` and CUDA `11.8`. Run the GPU availability check on a node with an allocated NVIDIA GPU; a login or CPU-only node can report `False`.
 
 In a new shell, restore the interpreter paths before running the workflow (and load CUDA again if your system requires it):
 
@@ -80,24 +78,18 @@ export PYTHON_BIN="$HOME/.venvs/delight-fm-model/bin/python"
 export REPORT_PYTHON_BIN="$HOME/.venvs/delight-fm-report/bin/python"
 ```
 
-Training submission uses Slurm (`sbatch`). In the active run’s `config/settings.json`, set `slurm.gpu_partition` and `slurm.cpu_partition` to your cluster’s partition names. Both default to `null`, which omits `--partition` and uses the scheduler default; choose a GPU-capable partition for GPU jobs if your cluster requires it. Review the memory, CPU, time and concurrency settings for your resources. Interpreter paths, the repository and the run directory must be accessible on the compute nodes; loaded module environments and exported interpreter paths are inherited by submitted jobs.
+Here, training submission uses Slurm (`sbatch`). In the active run’s `config/settings.json`, set `slurm.gpu_partition` and `slurm.cpu_partition` to your cluster’s partition names. Both default to `null`, which omits `--partition` and uses the scheduler default; choose a GPU-capable partition for GPU jobs if your cluster requires it. Review the memory, CPU, time and concurrency settings for your resources.
 
-R is needed only for the optional RNA input rebuild. Install Seurat (v5 API), Matrix and jsonlite in your R environment, and make `Rscript` available on your `PATH`, or set `RSCRIPT_BIN` to its full path. The prepared input datasets can be used directly without R. Individual workflow stages can be run outside Slurm; the `submit-*` commands require Slurm, and GPU stages still require an NVIDIA GPU. See the [full workflow instructions](runs/README.md) for stage commands and task IDs.
+R is needed only for the optional RNA input rebuild. Install Seurat (v5 API), Matrix and jsonlite in your R environment, and make `Rscript` available on your `PATH`, or set `RSCRIPT_BIN` to its full path. The prepared input datasets can be used directly without R.
 
 ## Install data
 
-Run the following commands from the root of this repository. First, install the Hugging Face download helper in the Python environment you will use to download the data (you can skip this step if it is already installed):
+Use the modeling environment and `huggingface_hub` installed in [the setup above](#1-create-the-modeling-environment). Run the download command from the root of this repository.
+
+Choose the dataset version to download: open the published dataset’s [commit history](https://huggingface.co/datasets/chloehlee/delight_fm_v1-data/commits/main), open the desired commit and copy the full 40-character SHA from the end of its URL. Replace `COMMIT_SHA` below with that value:
 
 ```bash
-python -m pip install huggingface_hub
-```
-
-If you created the modeling environment above, use `"$PYTHON_BIN"` in place of `python` in the commands in this section.
-
-Next, choose the dataset version to download. Open the published dataset’s [commit history](https://huggingface.co/datasets/chloehlee/delight_fm_v1-data/commits/main), open the desired commit and copy the full 40-character SHA from the end of its URL. Replace `COMMIT_SHA` below with that value:
-
-```bash
-python tools/dataset.py download --revision COMMIT_SHA
+"$PYTHON_BIN" tools/dataset.py download --revision COMMIT_SHA
 ```
 
 The commit SHA pins an exact dataset version, so you can retrieve the same inputs even if the dataset repository is updated later. The helper also checks every downloaded file against this code release’s SHA-256 manifest to confirm that the inputs match the expected files.
