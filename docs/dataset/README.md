@@ -1,16 +1,16 @@
 ---
-pretty_name: DELIGHT-FM v1 reproducibility inputs
+pretty_name: DELIGHT-FM v1 data
 # license: ""
 tags:
 - single-cell
 - gene-expression
-- biology
+- foundation-model
 ---
-# DELIGHT-FM v1 inputs
+# DELIGHT-FM v1 data
 
-This dataset package contains 137 files (161.94 GiB): source Seurat RDS files, five tokenized train/test datasets, matched expression H5AD and Matrix Market exports, metadata, and gene statistics. `manifest.json` records relative paths, byte sizes, cohort and SHA-256. Files retain the directory layout expected by `runs` in the `delight_fm_v1` code repository.
+This dataset package contains 137 files (161.94 GiB): source Seurat RDS files, matched expression H5AD and Matrix Market exports, five tokenized train/test datasets, metadata, and gene statistics. `manifest.json` records relative paths, byte sizes, cohort and SHA-256. Files retain the directory layout expected by `runs` in the [delight_fm_v1](https://github.com/ChloeHJ/delight_fm_v1/) code repository.
 
-The five cohorts are merged DELIGHT-FM, immune, stromal, colon epithelium and ileum epithelium. Frozen donor assignments and supporting regulatory reference tables accompany the code repository. Training and evaluation use separate donors. See the code repository run README for exact counts and selection methodology.
+The five cohorts are merged DELIGHT-FM, immune, stromal, colon epithelium and ileum epithelium. Frozen donor assignments and supporting regulatory reference tables accompany the code repository. Training and evaluation use separate donors. See the code repository README for exact counts and selection methodology.
 
 ## Install
 
@@ -31,13 +31,11 @@ python tools/dataset.py download \
   --run-dir runs
 ```
 
-The helper downloads the 137 manifest-listed files (approximately 161.94 GiB), verifies each SHA-256 and writes a local verification receipt. Input paths resolve relative to `runs/`; training and analysis configuration, donor assignments and supporting regulatory references are supplied by the GitHub repository. See its [run instructions](https://github.com/ChloeHJ/delight_fm_v1/blob/main/runs/README.md) for the modeling environment and workflow commands.
+The helper downloads the 137 manifest-listed files (approximately 161.94 GiB). Input paths resolve relative to `runs/`, training and analysis configuration in the GitHub repository. See its [run instructions](https://github.com/ChloeHJ/delight_fm_v1/blob/main/runs/README.md) for the modeling environment and workflow commands.
 
 The tokenized train/test datasets retain Hugging Face `save_to_disk` format and can be opened with `datasets.load_from_disk` in the modeling environment. The Seurat RDS and Matrix Market files support optional expression export and rebuilding; the prepared tokenized datasets are used for the standard training workflow.
 
 ## Release metadata
-
-Fill the empty quoted fields with the final release information.
 
 | Field | Information to complete |
 |---|---|
@@ -52,11 +50,8 @@ Fill the empty quoted fields with the final release information.
 | Redistribution terms | `""` |
 | Required attribution | `""` |
 
-The dataset license and redistribution terms should identify the conditions applying to the expression data, donor metadata and derived exports. Model-package licenses apply to their code and weights; they do not specify the terms of the underlying source datasets. Once the dataset license is selected, add its Hugging Face license identifier to the YAML header.
 
 ### Source datasets and terms
-
-Add one row per contributing study or source dataset, including any source-specific conditions retained by this release.
 
 | Study / source | Accession or source URL | Source citation | License / terms | Attribution or redistribution conditions |
 |---|---|---|---|---|
@@ -81,4 +76,4 @@ Fill the empty BibTeX fields below with the final citation details. Add the asso
 
 ## Code and data
 
-Full training and analysis scripts, fixed donor assignments and regulatory references: [GitHub: ChloeHJ/delight_fm_v1](https://github.com/ChloeHJ/delight_fm_v1). Published dataset: [chloehlee/delight_fm_v1-data](https://huggingface.co/datasets/chloehlee/delight_fm_v1-data). The dataset helper uploads only the 137 manifest-listed inputs plus this card and manifest; local diagnostics, launchers and receipts are not uploaded. Download through the GitHub helper to install inputs into its prepared run layout.
+Full training and analysis scripts, fixed donor assignments and regulatory references: [GitHub: ChloeHJ/delight_fm_v1](https://github.com/ChloeHJ/delight_fm_v1). Published dataset: [chloehlee/delight_fm_v1-data](https://huggingface.co/datasets/chloehlee/delight_fm_v1-data).
