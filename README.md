@@ -96,8 +96,6 @@ The commit SHA pins an exact dataset version, so you can retrieve the same input
 
 The default dataset is `chloehlee/delight_fm_v1-data`, containing 137 files (approximately 162 GiB). In a standalone checkout, downloads go to `runs/`. After successful verification, the helper writes a local receipt at `data/input_manifest.json` inside the run directory. See the [dataset card](docs/dataset/README.md) for the included files and download options.
 
-If you already have the dataset stored at `../huggingface/dataset` relative to this repository, the workflow automatically uses that directory. Otherwise, download the dataset using the command above.
-
 To select another prepared run for the workflow, set `DELIGHT_FM_RUN_DIR` to its path. Keep the run directory in place while its jobs are active.
 
 ## Train and analyze
@@ -181,7 +179,6 @@ The analysis workflows address several related questions:
 - **Regulon response patterns:** when clustering regulons by their perturbation effects on predicted age across donors, the workflow uses balanced magnitude-aware Ward clustering with 12 groups by default. A shared scaling transformation preserves the direction and relative magnitude of the effects. Reports include representative regulons and checks of how stable the groups are when individual donors are left out.
 - **BHLHE40:** the ileum workflow uses bulk-expression-informed proportional deletion and overexpression to examine changes in predicted age. The deletion applies the inverse of the bulk overexpression response; it does not represent a measured knockout signature.
 
-Perturbation inference uses float32 edits and requires GPU no-op controls to pass before screens proceed. These controls check that edits intended to leave the input unchanged also leave predictions unchanged.
 
 ## Released models
 
