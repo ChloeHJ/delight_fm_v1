@@ -25,7 +25,7 @@ The `submit-*` commands require Slurm. Set `slurm.gpu_partition` and `slurm.cpu_
 | Ileum epithelium | 67,849 | 14,564 | 71 | 13 |
 | Stromal | 206,814 | 60,323 | 119 | 21 |
 
-The released tokenised datasets use fixed donor assignments with no train/test donor overlap. Ileum excludes the `Adult, 80+` age group; colon and ileum each require at least 50 training cells in every retained age group. Each cohort contains its available subset of donors, so donor sets differ across lineages. Validation exports per-age cell and donor counts to `diagnostics/*_age_counts.csv`.
+The released tokenised datasets use fixed donor assignments with no train/test donor overlap. Colon and ileum each require at least 50 training cells in every retained age group. Each cohort contains its available subset of donors, so donor sets differ across lineages. Validation exports per-age cell and donor counts to `diagnostics/*_age_counts.csv`.
 
 ## 1. Configure the run and validate the inputs
 
@@ -38,8 +38,6 @@ bash runs/run.sh validate
 ```
 
 `plan` records configuration and input/source hashes in `diagnostics/plan.json` and writes the training task IDs to `conditions.tsv`. `prepare` resolves the prepared input directories and validates them. `validate` repeats the checks independently: donor assignments, absence of train/test donor overlap, cell counts, age labels, sequence lengths and required age-group coverage. Summaries are written to `diagnostics/`. Input validation checks the data and splits; model performance is evaluated after training.
-
-The plan is immutable and can be repeated unchanged. Computational changes require a fresh run/plan. Slurm resources and clustering resolution can change without invalidating fitted models. To start another analysis, prepare a new directory with the configuration, references, donors and verified local inputs, set `DELIGHT_FM_RUN_DIR` to its path, and create a plan there. Keep generated results and diagnostics with their original run, and keep run directories in place while jobs are active.
 
 For the optional Seurat RDS export and tokenisation route, use `bash runs/run.sh rebuild-inputs --group GROUP` in a fresh run with empty exported/tokenised destinations. This requires R with Seurat (v5 API), Matrix and jsonlite; set `RSCRIPT_BIN` if `Rscript` is not on your PATH. Use a group name from the [recovery commands](#individual-stages-and-recovery) below. The standard training workflow uses the supplied tokenised datasets and does not need R.
 
@@ -72,7 +70,7 @@ The submission command returns after scheduling jobs; it does not wait for train
 bash runs/run.sh report
 ```
 
-Open `outputs/web_summary/index.html` to review training loss curves, downstream metrics and model-selection results. Rankings and chosen checkpoints are under `outputs/model_selection/`. For each cohort, `outputs/model_registry/<group>/` contains `binding.json`, `noop_controls.json` and `baseline_verified.json`, which bind the saved model and inputs to the unperturbed predictions used for analysis. Perturbation submission checks that these records still match the model, inputs and baseline files.
+Open `outputs/web_summary/index.html` to review training loss curves, downstream metrics and model-selection results. Rankings and chosen checkpoints are under `outputs/model_selection/`. For each cohort, `outputs/model_registry/<group>/` contains `binding.json`, `noop_controls.json` and `baseline_verified.json`, which bind the saved model and inputs to the unperturbed predictions used for analysis. 
 
 ### Individual stages and recovery
 
@@ -117,7 +115,7 @@ bash runs/run.sh cluster --group epithelium_ileum
 
 Clustering uses balanced magnitude-aware Ward clustering with 12 groups by default. A shared scaling transformation preserves the direction and relative magnitude of regulon effects across donors. Outputs include representative regulons and checks of how stable the groups are when individual donors are left out.
 
-Reports and clustering use completed outputs from the active run. Reports can be regenerated while outputs accumulate; absent analyses are omitted. Clustering requires a complete regulon-by-donor matrix of prediction changes. `REPORT_PYTHON_BIN` selects the reporting environment for both commands.
+Reports and clustering use completed outputs from the active run. Clustering requires a complete regulon-by-donor matrix of prediction changes. `REPORT_PYTHON_BIN` selects the reporting environment for both commands.
 
 | Output | Location under this run |
 |---|---|
@@ -133,13 +131,11 @@ Reports and clustering use completed outputs from the active run. Reports can be
 | Individual model summaries and raw figures | `outputs/<group>/web_summary/index.html` and `figures/` |
 | k=12 cluster report, assignments, features, figures | `outputs/<group>/regulon_clusters_k12/` |
 
-Individual summaries embed PNG images; PDF/PNG figures and CSV data are stored beside each report. Merged reports emphasize classifier changes, class contributions and UMAP embedding L2 shifts. Raw log2(PCW) donor plots belong to lineage age models. Source details are in [the source README](../src/README.md).
+Merged reports emphasize classifier changes, class contributions and UMAP embedding L2 shifts. Raw log2(PCW) donor plots belong to lineage age models. Source details are in [the source README](../src/README.md).
 
 ## Validation and scope
 
-CPU tests cover signed float32 edits, unchanged-input controls, mask alignment, baseline mismatch rejection, clustering scale, launcher portability and command compatibility. Passing these tests does not replace the GPU baseline and no-op checks required by each analysis run. The workflow creates new checkpoints; published checkpoints and model-specific inference notebooks are available in the [Hugging Face model family](https://huggingface.co/chloehlee/).
-
-The age report includes an early-life mean absolute effect ranking. For an independent final evaluation, reserve an additional donor cohort beyond those used for checkpoint selection.
+The workflow creates new checkpoints; published checkpoints and model-specific inference notebooks are available in the [Hugging Face model family](https://huggingface.co/chloehlee/).
 
 ## Published checkpoints and notebooks
 
