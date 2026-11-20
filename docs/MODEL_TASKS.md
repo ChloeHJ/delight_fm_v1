@@ -2,13 +2,13 @@
 
 Five foundation checkpoints and four fitted age checkpoints are public in [Hugging Face DELIGHT-FM family](https://huggingface.co/chloehlee/). 
 
-| Task | Foundation merged | Fitted lineage `-age` |
+| Task | Foundation models | Fine-tuned models |
 |---|---|---|
 | Broad-cell classification with saved pretraining labels | Saved 17-class head | Use foundation companion |
 | Cluster classification with saved pretraining labels | Saved 62-class head | Use foundation companion |
 | New cell-type or cluster labels | Fine-tune and save a task head | Use foundation companion for new tasks |
 | Location classification | Fine-tune location head | Use foundation companion |
-| Predicted developmental age, log2(PCW) | Use age companion | Saved age head and fine-tuned backbone |
+| Predicted developmental age, log2(PCW) | Use lineage age models | Saved age head and fine-tuned backbone |
 | Individual gene and SCENIC+ age deletion | Use lineage age models | Supported directly |
 | Marker gene and CollecTRI broad-cell deletion | Supported using saved broad-cell head | Use merged model |
 
