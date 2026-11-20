@@ -1,4 +1,4 @@
-# Reporting may use the site's python-cbrg module, separate from CUDA training.
+# Install in a reporting environment separate from CUDA training.
 numpy
 pandas
 scipy

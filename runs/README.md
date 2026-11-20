@@ -2,6 +2,10 @@
 
 Run these commands from the repository root. Install the pinned modeling environment and set `PYTHON_BIN` to its Python executable. Install the [published input dataset](https://huggingface.co/datasets/chloehlee/delight_fm_v1-data) using the [dataset instructions](../docs/dataset/README.md). Configuration and donor assignments are relative to this run directory.
 
+The launchers do not load environment modules. Prepare CUDA and any site-specific modules before running them, and set `REPORT_PYTHON_BIN` for the separate reporting environment. Optional RNA rebuilding uses `RSCRIPT_BIN` (default: `Rscript` on PATH). See the [environment setup](../README.md#set-up-the-environments). Scheduled jobs use the launchers from the current Git checkout, with data and outputs in the selected run directory.
+
+The `submit-*` commands require Slurm. Set `slurm.gpu_partition` and `slurm.cpu_partition` in `config/settings.json` for your cluster; `null` uses the scheduler default without adding a partition argument. Review all resource settings before submission. To use another scheduler or run directly, invoke individual stages with the appropriate task IDs and allocate the required CPU/GPU resources yourself.
+
 ## Cohorts
 
 | Model | Train cells | Test cells | Train donors | Test donors |

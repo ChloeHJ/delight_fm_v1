@@ -144,8 +144,8 @@
     "tf": "BHLHE40"
   },
   "slurm": {
-    "gpu_partition": "gpu-ada",
-    "cpu_partition": "long,short",
+    "gpu_partition": null,
+    "cpu_partition": null,
     "memory": "128G",
     "cpus": 4,
     "time": "1-00:00:00",

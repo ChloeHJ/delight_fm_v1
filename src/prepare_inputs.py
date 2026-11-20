@@ -69,7 +69,7 @@ def rebuild(group):
     env=dict(os.environ,ATLAS_MAMBA_INPUT_RDS=record['rds'],EXPORT_DIR=str(RUN/'exported'/group),
         ATLAS_MAMBA_LINEAGE_GROUP=group,V12_DONORS_CSV=str(RUN/'donors'/f'{group}.csv'),
         V12_EXCLUDED_AGES=json.dumps(record['excluded_age_groups']))
-    run(['Rscript',SRC/'prepare_inputs.R'],env)
+    run([os.environ.get('RSCRIPT_BIN','Rscript'),SRC/'prepare_inputs.R'],env)
     run([config()['model_python'],SRC/'build_atlas_hf_dataset.py','--export-dir',RUN/'exported'/group,
         '--token-dictionary',RUN/'data/reference/token_dictionary.pkl','--gene-mapping-tsv',RUN/'data/reference/gene_symbol_to_ensembl.tsv',
         '--output-dir',RUN/'tokenized'/group,'--max-length',str(config()['sweep']['max_length']),'--seed','42'])

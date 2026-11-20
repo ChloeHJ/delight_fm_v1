@@ -17,17 +17,13 @@ Large expression datasets and model weights are distributed on Hugging Face. Thi
 
 ## Set up the environments
 
-Run these commands from the root of this repository. The workflow uses two Python environments: one for training and model inference, and one for plotting and reports. The examples below create them under `$HOME/.venvs` without requiring administrator access.
+Run these commands from the root of this repository. The workflow uses two Python environments: one for training and model inference, and one for plotting and reports. The examples below create them under `$HOME/.venvs`.
 
 ### 1. Create the modeling environment
 
-Use Linux with Python 3.10 and the CUDA 11.8 toolkit available. On a cluster with environment modules, load CUDA first:
+Use Linux with Python 3.10 and the CUDA 11.8 toolkit available. Make sure CUDA is on your executable and library paths. If your cluster uses environment modules, load its Python and CUDA modules using the names provided by your administrator; module names vary between systems. The launcher does not load modules automatically.
 
-```bash
-module load cuda/11.8
-```
-
-If your system does not use modules, make sure CUDA 11.8 is on your executable and library paths. Check that `python3.10 --version` and `nvcc --version` report the expected versions. Building the CUDA extensions from source also requires a compatible C++ compiler.
+Check that `python3.10 --version` and `nvcc --version` report the expected versions. Building the CUDA extensions from source also requires a compatible C++ compiler.
 
 ```bash
 python3.10 -m venv "$HOME/.venvs/delight-fm-model"
@@ -59,7 +55,7 @@ export REPORT_PYTHON_BIN="$HOME/.venvs/delight-fm-report/bin/python"
 "$REPORT_PYTHON_BIN" -m pip install -r src/requirements-report.txt
 ```
 
-The launcher uses `REPORT_PYTHON_BIN` for `report` and `cluster`. If you leave it unset on a cluster with modules, the launcher loads `python-cbrg` instead.
+The launcher uses `REPORT_PYTHON_BIN` for `report` and `cluster`, and `PYTHON_BIN` for modeling stages. Each defaults to `python3` on your `PATH` if unset. Setting both explicitly lets you keep the two environments separate without activating either one.
 
 ### 3. Check the setup
 
@@ -84,7 +80,9 @@ export PYTHON_BIN="$HOME/.venvs/delight-fm-model/bin/python"
 export REPORT_PYTHON_BIN="$HOME/.venvs/delight-fm-report/bin/python"
 ```
 
-Training submission uses Slurm (`sbatch`). Review the partition names and resources in the active run’s `config/settings.json` before submitting jobs. R is needed only for the optional RNA input rebuild; the prepared input datasets can be used directly.
+Training submission uses Slurm (`sbatch`). In the active run’s `config/settings.json`, set `slurm.gpu_partition` and `slurm.cpu_partition` to your cluster’s partition names. Both default to `null`, which omits `--partition` and uses the scheduler default; choose a GPU-capable partition for GPU jobs if your cluster requires it. Review the memory, CPU, time and concurrency settings for your resources. Interpreter paths, the repository and the run directory must be accessible on the compute nodes; loaded module environments and exported interpreter paths are inherited by submitted jobs.
+
+R is needed only for the optional RNA input rebuild. Install Seurat (v5 API), Matrix and jsonlite in your R environment, and make `Rscript` available on your `PATH`, or set `RSCRIPT_BIN` to its full path. The prepared input datasets can be used directly without R. Individual workflow stages can be run outside Slurm; the `submit-*` commands require Slurm, and GPU stages still require an NVIDIA GPU. See the [full workflow instructions](runs/README.md) for stage commands and task IDs.
 
 ## Install data
 

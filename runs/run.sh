@@ -11,14 +11,7 @@ export DELIGHT_FM_GIT_ROOT="$WORKSPACE"
 STAGE="${1:---help}"
 case "$STAGE" in
   report|cluster)
-    if command -v module >/dev/null 2>&1 && [[ -z "${REPORT_PYTHON_BIN:-}" ]]; then module load python-cbrg; fi
     exec env PYTHONNOUSERSITE=1 MPLBACKEND=Agg "${REPORT_PYTHON_BIN:-python3}" "${WORKSPACE}/src/pipeline.py" "$@"
-    ;;
-  rebuild-inputs)
-    if command -v module >/dev/null 2>&1; then module load R-cbrg; module load cuda/11.8; fi
-    ;;
-  *)
-    if command -v module >/dev/null 2>&1; then module load cuda/11.8; fi
     ;;
 esac
 exec env -u PYTHONPATH PYTHONNOUSERSITE=1 "${PYTHON_BIN:-python3}" \

@@ -31,12 +31,10 @@ Construct the signed regulon-by-donor matrix of mean prediction changes. Define 
 
 ## Environments and checks
 
-`requirements-model.txt` records the pinned Python 3.10/CUDA 11.8 modelling stack; compiled Mamba extensions must match PyTorch. `requirements-report.txt` describes the separate plotting environment. `run.sh` clears inherited PYTHONPATH for the model environment and loads the module plotting environment for reports. No editable external Geneformer installation is needed: the local input-only adapter follows Geneformer's [right padding and special-token handling](https://huggingface.co/ctheodoris/Geneformer/blob/main/geneformer/pretrainer.py), while `DataCollatorForLanguageModeling` still implements masking.
+`requirements-model.txt` records the pinned Python 3.10/CUDA 11.8 modelling stack; compiled Mamba extensions must match PyTorch. `requirements-report.txt` describes the separate plotting environment. `run.sh` clears inherited PYTHONPATH for the model environment and uses `PYTHON_BIN` for modeling and `REPORT_PYTHON_BIN` for reports; each defaults to `python3` on PATH. No environment modules are loaded automatically. Optional RNA rebuilding uses `RSCRIPT_BIN`, defaulting to `Rscript` on PATH. See the [environment setup](../README.md#set-up-the-environments). No editable external Geneformer installation is needed: the local input-only adapter follows Geneformer's [right padding and special-token handling](https://huggingface.co/ctheodoris/Geneformer/blob/main/geneformer/pretrainer.py), while `DataCollatorForLanguageModeling` still implements masking.
 
 From the Git repository root, with `PYTHON_BIN` set to the modeling environment:
 
 ```bash
-module load cuda/11.8
 env -u PYTHONPATH PYTHONNOUSERSITE=1 "$PYTHON_BIN" -m unittest discover -s src/tests -v
 ```
-

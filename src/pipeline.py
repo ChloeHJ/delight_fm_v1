@@ -8,7 +8,7 @@ import os
 from pathlib import Path
 import shlex
 import subprocess
-from paths import RUN,SRC
+from paths import RUN,SRC,TASK
 from common import config,inputs,read,digest,source_hashes,settings_hash,atomic_json,immutable,require_plan
 GROUPS=['delight_fm','immune','epithelium_colon','epithelium_ileum','stromal']
 
@@ -44,14 +44,16 @@ def submit(kind,dry_run=False):
     records=[]
     def job(stage,array=None,gpu=False,after=None):
         cmd=['sbatch','--parsable','--job-name',f'v12-{stage}','--chdir',str(RUN),
-            '--partition',slurm['gpu_partition'] if gpu else slurm['cpu_partition'],'--time',slurm['time'],
+            '--time',slurm['time'],
             '--cpus-per-task',str(slurm['cpus']),'--mem',slurm['memory'],
             '--output',str(RUN/'logs'/f'{stage}.%A_%a.out'),'--error',str(RUN/'logs'/f'{stage}.%A_%a.err'),
             '--export','ALL,V12_RUN_DIR='+str(RUN)]
+        partition=slurm.get('gpu_partition' if gpu else 'cpu_partition')
+        if partition:cmd+=['--partition',partition]
         if gpu:cmd+=['--gpus=1']
         if array:cmd+=['--array',array]
         if after:cmd+=['--dependency','afterok:'+':'.join(after)]
-        cmd+=[str(RUN/'job.sh'),stage]
+        cmd+=[str(TASK/'runs/job.sh'),stage]
         print(shlex.join(cmd),flush=True)
         ident=f'<{stage}-job-id>' if dry_run else subprocess.check_output(cmd,text=True).strip().split(';')[0]
         records.append(dict(stage=stage,job_id=ident,command=cmd))
