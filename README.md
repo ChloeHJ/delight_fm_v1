@@ -2,7 +2,7 @@
 
 DELIGHT-FM training, downstream evaluation and in silico perturbation workflows.
 
-Code: [ChloeHJ/delight_fm_v1](https://github.com/ChloeHJ/delight_fm_v1). Models: [chloehlee on Hugging Face](https://huggingface.co/chloehlee/). Published input dataset: [chloehlee/delight_fm_v1-data](https://huggingface.co/datasets/chloehlee/delight_fm_v1-data).
+Code: [ChloeHJ/delight_fm_v1](https://github.com/ChloeHJ/delight_fm_v1). Models: [Hugging Face](https://huggingface.co/chloehlee/). Published input dataset: [chloehlee/delight_fm_v1-data](https://huggingface.co/datasets/chloehlee/delight_fm_v1-data).
 
 ## Contents
 
